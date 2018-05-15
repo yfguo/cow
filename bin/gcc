@@ -1,0 +1,27 @@
+#!/bin/sh
+#
+# (C) 2018 by Argonne National Laboratory.
+#     See COPYRIGHT in top-level directory.
+#
+
+if test -z "$OUTPUT_WRAPPER_CC" ; then
+    OUTPUT_WRAPPER_CC="/home/yguo/.local/gcc/gcc-5.2.0/bin/gcc"
+fi
+
+if test -n "$OUTPUT_WRAPPER_ENABLE" ; then
+    IFS=', ' read -r -a array <<< "$@"
+    filename=""
+    ext=".c"
+
+    for index in "${!array[@]}"; do
+        if [[ ${array[$index]} == *$ext ]]; then
+            filename="${array[$index]}"
+            break
+        fi
+    done
+
+    exec "$OUTPUT_WRAPPER_CC" "$@" 2>&1 | tee "$filename.out"
+else
+    exec "$OUTPUT_WRAPPER_CC" "$@"
+fi
+
