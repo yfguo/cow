@@ -4,8 +4,10 @@
 #     See COPYRIGHT in top-level directory.
 #
 
-if test -z "$OUTPUT_WRAPPER_CC" ; then
-    OUTPUT_WRAPPER_CC="/home/yguo/.local/gcc/gcc-5.2.0/bin/gcc"
+if test -z "$OUTPUT_WRAPPER_BIN" ; then
+    OUTPUT_WRAPPER_CC="gcc"
+else
+    OUTPUT_WRAPPER_CC="$OUTPUT_WRAPPER_BIN/gcc"
 fi
 
 if test -n "$OUTPUT_WRAPPER_ENABLE" ; then

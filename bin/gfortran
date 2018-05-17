@@ -4,8 +4,10 @@
 #     See COPYRIGHT in top-level directory.
 #
 
-if test -z "$OUTPUT_WRAPPER_FC" ; then
-    OUTPUT_WRAPPER_FC="/home/yguo/.local/gcc/gcc-5.2.0/bin/gfortran"
+if test -z "$OUTPUT_WRAPPER_BIN" ; then
+    OUTPUT_WRAPPER_FC="gfortran"
+else
+    OUTPUT_WRAPPER_FC="$OUTPUT_WRAPPER_BIN/gfortran"
 fi
 
 if test -n "$OUTPUT_WRAPPER_ENABLE" ; then
