@@ -22,7 +22,7 @@ if test -n "$OUTPUT_WRAPPER_ENABLE" ; then
         fi
     done
 
-    exec "$OUTPUT_WRAPPER_CC" "$@" 2>&1 | tee "$filename.out"
+    exec "$OUTPUT_WRAPPER_CC" "$@" 2>&1 | tee "$filename.cow-out"
 else
     exec "$OUTPUT_WRAPPER_CC" "$@"
 fi

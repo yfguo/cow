@@ -10,7 +10,7 @@ if test $# -eq 1 ; then
     OUTPUT_FILE="$1"
 fi
 
-for file in $(find . -name "*.*.out" | tr "\n" " ") ; do
+for file in $(find . -name "*.*.cow-out" | tr "\n" " ") ; do
     if test -s "$file" ; then
         {
             echo "####################"

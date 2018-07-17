@@ -4,4 +4,4 @@
 #     See COPYRIGHT in top-level directory.
 #
 
-find . -name "*.*.out" | xargs rm
+find . -name "*.*.cow-out" | xargs rm
