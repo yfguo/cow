@@ -19,3 +19,5 @@ for file in $(find . -name "*.*.cow-out" | tr "\n" " ") ; do
         } >> "$OUTPUT_FILE"
     fi
 done
+
+find . -name "*.*.cow-out" | xargs rm
