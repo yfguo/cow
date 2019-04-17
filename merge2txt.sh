@@ -13,7 +13,7 @@ fi
 for file in $(find . -name "*.*.cow-out" | tr "\n" " ") ; do
     if test -s "$file" ; then
         {
-            echo "00000000000000000000"
+            echo "===================="
             echo "${file%.out}"
             cat "$file"
         } >> "$OUTPUT_FILE"
